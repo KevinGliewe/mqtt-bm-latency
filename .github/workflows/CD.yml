@@ -5,10 +5,13 @@ on:
     branches:
       - master
 
+
 jobs:
   bump:
     name: Bump tag version
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs:
       newtag: ${{ steps.bump_version.outputs.new_tag }}
     steps:
